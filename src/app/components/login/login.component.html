@@ -1,0 +1,15 @@
+<div class="col-md-12 text-center mt-4" *ngIf="!chatService.user.uid">
+  <p>Ingrese con la cuenta de su preferencia</p>
+  <button class="btn btn-outline-danger mr-2" type="button" (click)="login('google')">
+    <img style="height: 20px; width: 20px;" src="https://image.flaticon.com/icons/svg/2702/2702602.svg" alt="">
+  </button>
+  <button class="btn btn-outline-primary" type="button" (click)="login('twitter')">
+    <img style="height: 20px; width: 20px;" src="https://image.flaticon.com/icons/svg/733/733579.svg" alt="">
+  </button>
+</div>
+
+<div class="col-md-12 text-right mt-4" *ngIf="chatService.user.uid">
+  <button class="btn btn-outline-danger mr-2" type="button" (click)="chatService.logout()">
+    Salir
+  </button>
+</div>

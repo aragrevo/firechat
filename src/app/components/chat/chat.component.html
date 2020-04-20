@@ -1,0 +1,22 @@
+<div class="col">
+  <div class="card mt-4" style="height: 500px;">
+    <h5 class="card-header">Chat</h5>
+    <div class="card-body text-right overflow-auto">
+
+      <div class="d-flex flex-row-reverse" *ngFor="let chat of chatService.chats">
+        <img [src]="chatService.user.photo" class="img-thumbnail rounded-circle" style="width: 50px; height: 50px;">
+        <div class="">
+          <span class="badge badge-pill badge-primary">{{chat.name}}</span>
+          <p class="card-text">{{chat.message}}</p>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="card-footer bg-transparent">
+      <input type="text" class="form-control" name="message" [(ngModel)]="message" (keyup.enter)="sendMessage()"
+        placeholder="Enviar mensaje">
+    </div>
+  </div>
+</div>
